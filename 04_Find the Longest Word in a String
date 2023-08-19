@@ -1,0 +1,37 @@
+/*
+Return the length of the longest word in the provided sentence.
+
+Your response should be a number.
+*/
+
+
+
+function findLongestWordLength(str) {
+
+  let lStr = "";
+
+
+  // We can use regular expretion or split method to find an array of sub-string of the provided string sentance
+
+  let words = str.match(/\S+/g);
+  
+  // Or
+  //let words = str.split(" ");
+
+
+  for(let i=0; i<words.length; i++){
+
+    if (words[i].length>lStr.length){
+      lStr = words[i];
+    }
+  }
+
+
+  return lStr.length;
+}
+
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
+
+
+//Resources:
+//https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-find-the-longest-word-in-a-string/16015
