@@ -1,0 +1,45 @@
+/*
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like the and of.
+*/
+
+
+function titleCase(str) {
+
+  let tCase = [];
+
+  let arr = str.match(/\S+/g)
+
+  for(let i=0; i<arr.length; i++){
+
+    tCase.push(arr[i][0].toUpperCase()+arr[i].slice(1).toLowerCase());
+
+  }
+
+return tCase.join(" ");
+
+}
+
+console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
+
+
+
+
+//OR
+
+
+
+function titleCase(str) {
+
+  return str
+        .toLowerCase()
+        .replace(/(^|\s)\S/g, value => value.toUpperCase());
+
+}
+
+console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
+
+
+//Resources:
+//https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-title-case-a-sentence/16088
